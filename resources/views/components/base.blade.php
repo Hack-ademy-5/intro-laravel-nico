@@ -13,7 +13,7 @@
     
   </head>
   <body>
-
+    <x-nav></x-nav>
     <div class="container">
         {{ $slot }}
     </div>

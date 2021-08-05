@@ -1,6 +1,7 @@
-@extends('base')
-@section('title','About us')
-@section('content')
+<x-base>
+    <x-slot name="title">
+        About Us
+    </x-slot>
 <div class="row">
     <div class="col-12">
         <h1>Hello, soy about!</h1>
@@ -20,4 +21,4 @@
     </div>
     @endforeach
 </div>
-@endsection
+</x-base>
