@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,9 @@ Route::get('/who',[PublicController::class,'who'])->name('who');
 
 Route::get('/contact',[PublicController::class,'contact'])->name('contact');
 Route::post('/contact',[PublicController::class,'contactReceived'])->name('contact.received');
+
+// noticias
+// una pagina con las noticias
+Route::get('/noticias',[NewsController::class,'all'])->name('news.all');
+Route::get('/noticia/{id}',[NewsController::class,'detail'])->name('news.detail');
 
