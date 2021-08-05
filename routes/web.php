@@ -23,4 +23,5 @@ Route::get('/where',[PublicController::class,'where'])->name('where');
 Route::get('/who',[PublicController::class,'who'])->name('who');
 
 Route::get('/contact',[PublicController::class,'contact'])->name('contact');
+Route::post('/contact',[PublicController::class,'contactReceived'])->name('contact.received');
 

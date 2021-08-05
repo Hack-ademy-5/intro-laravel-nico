@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 
 class PublicController extends Controller
 {
@@ -36,4 +37,17 @@ class PublicController extends Controller
     {
         return view('contact');
     }
+
+    public function contactReceived(ContactRequest $request)
+    {
+        // validar los inputs
+        $misdatos = $request->validated();
+
+        // guardar los datos en el db
+        $name = $misdatos['fullname'];
+
+        return redirect()->route('home')->with('message',"Gracias $name por haber contactado con nosotros");
+
+    }
+
 }
